@@ -4,6 +4,10 @@ class PlaysController < ApplicationController
     @plays = Play.all.order("created_at DESC")
   end
   
+  def show
+    
+  end
+  
   def new
     @play = Play.new
   end
@@ -22,5 +26,9 @@ class PlaysController < ApplicationController
     
     def play_params
       params.require(:play).permit(:title, :description, :director)
+    end
+    
+    def find_play
+      @play = Play.find(params[:id])
     end
 end
