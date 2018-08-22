@@ -1,4 +1,5 @@
 class PlaysController < ApplicationController
+  before_action :find_play, only: [:show, :edit, :update, :destroy]
   
   def index
     @plays = Play.all.order("created_at DESC")
