@@ -35,6 +35,8 @@ class PlaysController < ApplicationController
   end
   
   def destroy
+    @play.destroy
+    redirect_to root_path
   end
   
     private
